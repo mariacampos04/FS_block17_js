@@ -36,7 +36,11 @@ const total = (accumulator, currentValue) => {
 const totalPrice = priceArray.reduce(total);
 console.table(totalPrice);
 
-
+//const totalCost = coffeeMenu.reduce(
+    //total, drinkObject) => total += drinkObject.price),
+    //0
+    //;
+//)
 
 // 6. Print an array with all the drinks that are seasonal.
 const seasonalDrinks = (item) => {
@@ -47,10 +51,10 @@ console.table(seasonal_);
 
 
 // 7. Print all the seasonal drinks with the words "with imported beans" after the item name. For example: "affogato with imported beans".
-const seasonal_Drinks = (item) => {
-    if (item.seasonal === true) {
-        return item.name + "with";
-    }
-}
-const _seasonal = coffeeMenu.filter(seasonal_Drinks);
-console.log(_seasonal);
+
+const drinks_beans = coffeeMenu
+.filter((drinkObject) => drinkObject.seasonal)
+.map((drinkObject) =>{
+    return drinkObject.name + " with imported beans";
+});
+console.table(drinks_beans);
